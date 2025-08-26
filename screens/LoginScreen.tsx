@@ -3,6 +3,7 @@ import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native';
 import axios from 'axios';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { AuthContext } from '../context/AuthContext';
+import TabNavigator from '../components/TabNavigator';
 
 export default function LoginScreen({ navigation }: any) {
   const [username, setUsername] = useState('');
@@ -40,7 +41,7 @@ export default function LoginScreen({ navigation }: any) {
         value={password}
         onChangeText={setPassword}
       />
-      <Button title="Entrar" onPress={handleLogin} />
+      <Button title="Entrar" onPress={TabNavigator} />
       <Text style={styles.link} onPress={() => navigation.navigate('Register')}>
         Não tem conta? Cadastre-se
       </Text>
