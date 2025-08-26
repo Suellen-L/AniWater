@@ -6,6 +6,7 @@ import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { AuthProvider } from './context/AuthContext';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +25,7 @@ export default function App() {
 
   return (
     <SafeAreaProvider>
+      <AuthProvider>
       <NavigationContainer>
         {isLoggedIn ? (
           <TabNavigator />
@@ -34,6 +36,7 @@ export default function App() {
           </Stack.Navigator>
         )}
       </NavigationContainer>
+      </AuthProvider>
     </SafeAreaProvider>
   );
 }
